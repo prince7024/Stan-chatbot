@@ -12,7 +12,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// 🔹 MongoDB Connection
+// MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB Connected"))
   .catch((err) => {
@@ -20,12 +20,12 @@ mongoose.connect(process.env.MONGO_URI)
     process.exit(1);
   });
 
-// 🔹 Health Check
+// Health Check
 app.get("/health", (req, res) => {
   res.json({ status: "Backend is running 🚀" });
 });
 
-// 🔹 Gemini Test API
+// Gemini Test API
 app.get("/test-gemini", async (req, res) => {
   try {
     const response = await axios.post(
@@ -53,7 +53,7 @@ app.get("/test-gemini", async (req, res) => {
 app.use("/chat", chatRoutes);
 
 
-// 🔹 Start Server
+// Start Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);

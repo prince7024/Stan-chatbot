@@ -10,7 +10,6 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const bottomRef = useRef(null);
 
-  // Auto-scroll when new message arrives
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, loading]);
@@ -45,15 +44,15 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-linear-to-br from-gray-100 to-gray-200 flex items-center justify-center px-4">
-      {/* FIXED HEIGHT CHAT CARD */}
+    
       <div className="w-full max-w-md h-140 bg-white rounded-2xl shadow-xl flex flex-col overflow-hidden">
 
-        {/* HEADER */}
+      
         <div className="px-4 py-3 border-b text-center font-semibold bg-gray-50 shrink-0">
           🤖 STAN Chatbot
         </div>
 
-        {/* MESSAGES */}
+     
         <div className="flex-1 p-4 space-y-4 overflow-y-auto">
           {messages.map((msg, i) => (
             <div
@@ -62,14 +61,14 @@ export default function App() {
                 msg.role === "user" ? "justify-end" : "justify-start"
               }`}
             >
-              {/* Bot Avatar */}
+              
               {msg.role === "assistant" && (
                 <div className="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center text-sm shrink-0">
                   B
                 </div>
               )}
 
-              {/* Message Bubble */}
+            
               <div
                 className={`max-w-[75%] px-4 py-2 rounded-2xl text-sm leading-relaxed wrap-break-word ${
                   msg.role === "user"
@@ -80,7 +79,7 @@ export default function App() {
                 {msg.text}
               </div>
 
-              {/* User Avatar */}
+             
               {msg.role === "user" && (
                 <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-sm shrink-0">
                   U
@@ -89,7 +88,7 @@ export default function App() {
             </div>
           ))}
 
-          {/* Typing Indicator */}
+          
           {loading && (
             <div className="flex items-center gap-2 text-sm text-gray-400 italic">
               <div className="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center text-sm shrink-0">
@@ -104,7 +103,7 @@ export default function App() {
           <div ref={bottomRef} />
         </div>
 
-        {/* INPUT */}
+    
         <div className="p-3 border-t flex gap-2 bg-gray-50 shrink-0">
           <input
             className="flex-1 border rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
