@@ -1,4 +1,4 @@
-# STAN Conversational Chatbot Assignment 🤖
+# STAN Conversational Chatbot 🤖
 
 A human-like conversational chatbot designed to be embedded into consumer-facing or UGC platforms.  
 The chatbot demonstrates contextual awareness, long-term memory, emotional tone adaptation, and hallucination-safe behavior.
@@ -13,6 +13,11 @@ The chatbot demonstrates contextual awareness, long-term memory, emotional tone 
 - Semantic context recall using embeddings
 - Identity consistency & hallucination resistance
 - Clean, embeddable chat UI
+
+---
+## 📸 Screenshot
+
+![STAN Chatbot UI](screenshots/chat-ui.png)
 
 ---
 
