@@ -51,12 +51,23 @@ This enables memory recall across sessions (page refresh, new visit).
 
 ## 🏗 Architecture
 
- User → Frontend (React + Tailwind) → Backend API (Node.js + Express)
-→ MongoDB (Persistent Memory) → Semantic Context Retrieval → Gemini LLM (Response Generation)
+```text
+User
+  ↓
+Frontend (React + Tailwind CSS)
+  ↓
+Backend API (Node.js + Express)
+  ↓
+Memory Layer
+   ├─ MongoDB Atlas (Persistent Memory)
+   └─ Semantic Context Retrieval
+       (Embeddings + Similarity Search)
+  ↓
+Gemini LLM
+  ↓
+AI Response → Frontend UI
 
-
-
-
+```
 ---
 
 ## 🛠 Tech Stack
@@ -88,17 +99,47 @@ This enables memory recall across sessions (page refresh, new visit).
 ---
 ## 🚀 Getting Started (Local Setup)
 
-### 1️⃣ Backend Setup
+Follow these steps to run the project locally.
 
+### ✅ Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js (v18 or higher)
+- npm 
+- MongoDB Atlas (or local MongoDB)
+- Git
+
+---
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/prince7024/Stan-chatbot.git
+cd stan-chatbot
+
+```
+
+### 2️⃣ Backend Setup
+
+Create a .env file inside the backend directory:
+```bash
+MONGODB_URI=your_mongodb_atlas_uri
+GEMINI_API_KEY=your_gemini_api_key
+```
+Navigate to the backend directory,install dependencies and Start  server:
 ```bash
 cd backend
 npm install
 npm run dev
-```
-### 2️⃣  Frontend Setup
 
+```
+### 3️⃣ Frontend Setup
+
+Open a new terminal window and run: 
 ```bash
 cd frontend
 npm install
 npm run dev
+
 ```
